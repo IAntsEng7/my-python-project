@@ -1,3 +1,11 @@
+# User input : 33, 1, 33
+# console:
+# 33 days are 792 hours
+# 1 day is 24 hours
+# 33 days are 792 hours
+# If user type the same number, we want to compile it one time.
+
+
 calculation_to_units = 24
 name_of_unit = "hours"
 
@@ -25,9 +33,6 @@ def validate_and_execute():
         print("Your input is not a valid number. Don't ruin my program.")
 
 
-# Lists :
-# 1. To store multiple items in a single variable.
-# 2. A list can contain different data type.
 user_input = ""
 while user_input != "exit":
     user_input = input(
@@ -35,14 +40,22 @@ while user_input != "exit":
         "enter number of days as a comma separate list, \n"
         "and I wii convert it to hours.\n"
         "Or text exit to end this program.\n")
-    print(type(user_input.split(",")))
-    print(user_input.split(","))
-    # For Loop :
-    # It's used for iterating over a sequence (like a list).
-    # So we can execute smth for each item in a list.
+    list_of_days = user_input.split(", ")
+    # set()
+    # - another build-in data type of Python.
+    # - as with Lists, used to store multiple items of data.
+    # - does "NOT" allow duplicate value.
 
-    # String (10, 22, 50, 100) -> List [10, 22, 50, 100] by using spilt().
-    # String - spilt() : default separator is any whitespace.
-    # Or it can override separator by using ",".
-    for number_of_days_element in user_input.split(","):
+    # Ex. user type in : 1,3,5,3,7,1,3,5,9
+    print(list_of_days)
+    # console : ['1,3,5,3,7,1,3,5,9']
+    print(type(list_of_days))
+    # console : <class 'list'>
+
+    print(set(list_of_days))
+    # console : {'1,3,5,3,7,1,3,5,9'}
+    print(type(set(list_of_days)))
+    # console : <class 'set'>
+
+    for number_of_days_element in set(list_of_days):
         validate_and_execute()
