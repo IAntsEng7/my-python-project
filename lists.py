@@ -1,6 +1,8 @@
 # Basic list operation :
 # - Create a list.
 my_list = ["January", "February", "March"]
+# - list.length
+print(f"My list length is {len(my_list)}")
 print(my_list)
 print(my_list[0])
 print(my_list[1])
@@ -18,5 +20,3 @@ print(my_list)
 # - Access items of the list by using for loop
 for i in my_list:
     print(i)
-
-
