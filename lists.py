@@ -15,7 +15,7 @@ print(my_list)
 my_list[0] = "January"
 my_list[-1] = "May"
 print(my_list)
-# - Access items of the list.
+# - Access items of the list by using for loop
 for i in my_list:
     print(i)
 
