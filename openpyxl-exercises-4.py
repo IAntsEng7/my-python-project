@@ -3,8 +3,7 @@ import openpyxl
 inv_file = openpyxl.load_workbook("inventory.xlsx")
 product_list = inv_file["Sheet1"]
 
-# Exercises 3 : List products with inventory less than 10
-# Console : {25: 7, 30: 6, 74: 2}
+# Exercises 4 : Add value for total inventory price and save as a new file.
 
 # ------------------  Start  ------------------
 
@@ -19,9 +18,10 @@ for product_row in range(2, product_list.max_row + 1):
     supplier_name = product_list.cell(product_row, 4).value
     inventory = product_list.cell(product_row, 2).value
     price = product_list.cell(product_row, 3).value
-
-    # Exercises 3 : List products with inventory less than 10
     product_num = product_list.cell(product_row, 1).value
+
+    # Exercises 4 : Add value for total inventory price and save as a new file.
+    inventory_price = product_list.cell(product_row, 5)
 
     # Exercises 1. calculate number of product per supplier
     if supplier_name in product_per_supplier:
@@ -41,6 +41,12 @@ for product_row in range(2, product_list.max_row + 1):
     # Exercises 3 : List products with inventory less than 10
     if inventory < 10:
         product_under_10_inv[int(product_num)] = int(inventory)
+
+    # Exercises 4 : Add value for total inventory price and save as a new file.
+    # -- Add
+    inventory_price.value = inventory * price
+# -- Save
+inv_file.save("inventory_with_total_value.xlsx")
 
 print(f"1. How many products we have per supplier? {product_per_supplier}")
 print(f"2. Total inventory value per supplier? {total_value_per_supplier}")
