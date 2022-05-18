@@ -34,10 +34,13 @@ product_per_supplier = {}
 for product_row in range(2, product_list.max_row + 1):
     supplier_name = product_list.cell(product_row, 4).value
 
+    # calculate number of product per supplier
     if supplier_name in product_per_supplier:
         # if supplier_name exist.
-        # product_per_supplier[supplier_name] = product_per_supplier[
-        #                                           supplier_name] + 1
+        # 1.
+        # current_num_products = product_per_supplier.get(supplier_name)
+        # product_per_supplier[supplier_name] = current_num_products + 1
+        # 2.
         product_per_supplier[supplier_name] += 1
     else:
         # if supplier_name not exist.
