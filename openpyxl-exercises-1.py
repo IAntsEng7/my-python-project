@@ -44,7 +44,6 @@ for product_row in range(2, product_list.max_row + 1):
         product_per_supplier[supplier_name] += 1
     else:
         # if supplier_name not exist.
-        print("Add a new supplier.")
         product_per_supplier[supplier_name] = 1
 
-print(product_per_supplier)
+print(f"1. How many products we have per supplier? {product_per_supplier}")
