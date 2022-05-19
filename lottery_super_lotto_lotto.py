@@ -22,5 +22,5 @@ def lottery_card():
 
 
 bet_number = input('Please enter a number want to bet:\n')
-for bets in bet_number:
+for bets in range(int(bet_number)):
     lottery_card()
